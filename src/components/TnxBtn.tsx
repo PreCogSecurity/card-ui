@@ -1,12 +1,10 @@
 import * as React from "react";
-import { CardList } from "./CardList";
-
 
 export interface TnxBtnProps {
-   func:(index:number) =>{};
+   func:() => void;
  }
 
-export class TnxBtn extends React.Component<TnxBtnProps, {}> {
+export class TnxBtn extends React.Component<TnxBtnProps> {
     render() {
         return (
           <span>

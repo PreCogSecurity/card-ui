@@ -1,40 +1,40 @@
 import * as React from "react";
 import { Card } from "./Card";
-
+import { CardData } from "../data/sampleCards";
 
 export interface CardListProps {
-  data: {id:number, name:string, age:string, pref:string, msg:string, job:string, height:string, img:string} [];
-  index:number;
-  left:string;
+  data: CardData[];
+  index: number;
+  left: string;
 }
 
-export class CardList extends React.Component<CardListProps, {}> {
+export class CardList extends React.Component<CardListProps> {
 
     render() {
-            // console.log(this.props.index);
-            return (
-              <Card cardname={this.props.data[this.props.index].name}
-                    cardage={this.props.data[this.props.index].age}
-                    cardpref={this.props.data[this.props.index].pref}
-                    cardmsg={this.props.data[this.props.index].msg}
-                    cardjob={this.props.data[this.props.index].job}
-                    cardheight={this.props.data[this.props.index].height}
-                    precardname={this.props.data[this.props.index + 1].name}
-                    precardage={this.props.data[this.props.index + 1].age}
-                    precardpref={this.props.data[this.props.index + 1].pref}
-                    precardmsg={this.props.data[this.props.index + 1].msg}
-                    precardjob={this.props.data[this.props.index + 1].job}
-                    precardheight={this.props.data[this.props.index + 1].height}
-                    class={this.props.left}
-                    frontid={this.props.data[this.props.index].id}
-                    frontimg={this.props.data[this.props.index].img}
-                    backid={this.props.data[this.props.index + 1].id}
-                    backimg={this.props.data[this.props.index + 1].img} />
-            );
-
+        const { data, index, left } = this.props;
+        const front = data[index];
+        const next = data[index + 1];
+        if (!front || !next) {
+            return null;
+        }
+        return (
+          <Card cardname={front.name}
+                cardage={front.age}
+                cardpref={front.pref}
+                cardmsg={front.msg}
+                cardjob={front.job}
+                cardheight={front.height}
+                precardname={next.name}
+                precardage={next.age}
+                precardpref={next.pref}
+                precardmsg={next.msg}
+                precardjob={next.job}
+                precardheight={next.height}
+                class={left}
+                frontid={front.id}
+                frontimg={front.img}
+                backid={next.id}
+                backimg={next.img} />
+        );
     }
 }
-
-// a = data.map(function(value){
-//   return <Image id="1" img="dfd"/>
-// })
