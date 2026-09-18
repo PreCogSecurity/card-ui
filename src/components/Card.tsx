@@ -1,6 +1,5 @@
 import * as React from "react";
 
-
 export interface CardProps {
   frontid:number;
   backid:number;
@@ -19,15 +18,13 @@ export interface CardProps {
   precardmsg:string;
   precardjob:string;
   precardheight:string;
-
 }
 
-export class Card extends React.Component<CardProps, {}> {
+export class Card extends React.Component<CardProps> {
 
     render() {
         return (
           <div>
-
             <div className={"front-img " + this.props.class} >
               <img src={this.props.frontimg}/>
               <article className="card-contents">
@@ -42,7 +39,3 @@ export class Card extends React.Component<CardProps, {}> {
         );
     }
 }
-
-// a = data.map(function(value){
-//   return <Image id="1" img="dfd"/>
-// })

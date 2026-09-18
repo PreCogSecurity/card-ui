@@ -3,18 +3,19 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
+        "strict": true,
         "module": "commonjs",
-        "target": "es5",
-        "jsx": "react"
+        "moduleResolution": "node",
+        "target": "es2018",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["dom", "es2018"]
     },
-    "files": [
-        "./typings/index.d.ts",
-        "./src/components/Main.tsx",
-        "./src/components/TnxBtn.tsx",
-        "./src/components/SryBtn.tsx",
-        "./src/components/CardList.tsx",
-        "./src/components/Card.tsx",        
-        "./src/index.tsx"
-
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ]
 }

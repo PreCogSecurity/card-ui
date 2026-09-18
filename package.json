@@ -1,19 +1,44 @@
 {
   "name": "card-ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "Swipeable card UI demo built with React, TypeScript, and webpack",
   "main": "./dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "node server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "jest --coverage"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "materialize-css": "^0.97.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "source-map-loader": "^0.1.5",
-    "ts-loader": "^0.8.2"
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^15.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   }
 }

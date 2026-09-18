@@ -1,10 +1,13 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import { Main } from "./components/Main";
 
+const container = document.getElementById("example");
+if (!container) {
+  throw new Error("Root container #example was not found in index.html");
+}
 
-ReactDOM.render(
-    <Main compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+createRoot(container).render(
+    <Main compiler="TypeScript" framework="React" />
 );
